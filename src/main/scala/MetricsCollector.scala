@@ -28,6 +28,10 @@ case class MetricsCollector(){
     pushGateway.push(registry, jobName)
   }
 
+  def pushAdd(jobName : String) = {
+    pushGateway.pushAdd(registry, jobName)
+  }
+
   def initGateway(addr : String, port : String) : MetricsCollector = {
     pushGateway = new PushGateway(s"$addr:$port")
     this
